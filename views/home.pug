@@ -1,0 +1,21 @@
+html
+head
+-var title="Classified Ads Home"
+title #{title}
+
+link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+link(rel="stylesheet" type="text/css" href="/css/style.css")
+body
+include /shared/head
+
+<div class="container">
+  <h3>Recent Posts</h3>
+  div.products
+    div.row
+        each n in items
+            div.col-md-4
+                img(src="/images/3.jpg", alt="")
+                div.title-p
+                    strong(style="float:left")=n.title
+                    strong(style="float:right")=n.price         
+    
