@@ -1,0 +1,33 @@
+html
+head
+-var title="Classified Ads Home"
+title #{title}
+
+link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+link(rel="stylesheet" type="text/css" href="/css/style.css")
+body
+include /shared/head2
+
+<div class="container">
+  <h3>All Posts</h3>
+  <div class="products" style="padding:20px">
+    <div class="row">
+    <table class="table">
+    <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+    
+    each n in items
+        tr
+          td= n.title
+          td= n.des
+          td= n.price
+          td  
+                a(href="/edit-post?id="+n._id)="Edit"
+          td      
+                a(href="/delete-post?id="+n._id)="Delete"
+                        
